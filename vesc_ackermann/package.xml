@@ -24,6 +24,7 @@
   <depend>nodelet</depend>
   <depend>pluginlib</depend>
   <depend>roscpp</depend>
+  <depend>rospy</depend>
   <depend>std_msgs</depend>
   <depend>tf</depend>
   <depend>vesc_msgs</depend>

@@ -11,6 +11,13 @@ add_message_files(
   FILES
   VescState.msg
   VescStateStamped.msg
+  VescCtrl.msg
+  VescCtrlStamped.msg
+  State.msg
+  ExtendedState.msg
+  Input.msg
+  Reference.msg
+  DataPointStamped.msg
 )
 generate_messages(
   DEPENDENCIES

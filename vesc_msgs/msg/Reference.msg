@@ -1,0 +1,2 @@
+float64 beta_ref
+float64 R_ref

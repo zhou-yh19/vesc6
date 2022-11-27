@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   nodelet
   pluginlib
   roscpp
+  rospy
   roslint
   std_msgs
   tf
@@ -33,6 +34,8 @@ catkin_package(
     pluginlib
     std_msgs
     tf
+    roscpp
+    rospy
     vesc_msgs
 )
 
