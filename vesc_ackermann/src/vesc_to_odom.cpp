@@ -111,9 +111,9 @@ void VescToOdom::vescStateCallback(const vesc_msgs::VescStateStamped::ConstPtr& 
 
   // convert to engineering units
   speed_ = ( state->state.speed - speed_to_erpm_offset_ ) / speed_to_erpm_gain_;
-  if (std::fabs(current_speed) < 0.05)
+  if (std::fabs(speed_) < 0.05)
   {
-    current_speed = 0.0;
+    speed_ = 0.0;
   }
   if (use_servo_cmd_)
   {
@@ -142,6 +142,12 @@ void VescToOdom::vescStateCallback(const vesc_msgs::VescStateStamped::ConstPtr& 
   // save state for next time
   last_state_ = state;
 
+  // publish odometry message
+  publishOdometry();
+}
+
+void VescToOdom::publishOdometry()
+{
   // publish odometry message
   nav_msgs::Odometry::Ptr odom(new nav_msgs::Odometry);
   odom->header.frame_id = odom_frame_;

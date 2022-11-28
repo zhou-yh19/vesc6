@@ -15,6 +15,7 @@ add_message_files(
   VescCtrlStamped.msg
   State.msg
   ExtendedState.msg
+  Circle.msg
   Input.msg
   Reference.msg
   DataPointStamped.msg
