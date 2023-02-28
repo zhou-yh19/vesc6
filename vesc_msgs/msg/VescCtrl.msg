@@ -4,6 +4,9 @@ int64 mode  #control mode 1-brake mode,2-current mode,3-speed mode,4-duty_cycle 
 float64 duty_cycle #vesc control mode
 float64 current    #vesc control mode
 float64 brake
-float64 speed      #vesc control mode
+float64 speed1      #vesc control mode
+float64 speed2      #vesc control mode
+float64 speed3      #vesc control mode
+float64 speed4      #vesc control mode
 float64 position
 float64 servo

@@ -83,7 +83,7 @@ VescDriver::VescDriver(ros::NodeHandle nh,
                                  &VescDriver::dutyCycleCallback, this);
   current_sub_ = nh.subscribe("commands/motor/current", 10, &VescDriver::currentCallback, this);
   brake_sub_ = nh.subscribe("commands/motor/brake", 10, &VescDriver::brakeCallback, this);
-  speed_sub_ = nh.subscribe("commands/motor/speed", 10, &VescDriver::speedCallback, this);
+  speed_sub_ = nh.subscribe(std::string("commands/motor/speed") + port[9], 10, &VescDriver::speedCallback, this);
   position_sub_ = nh.subscribe("commands/motor/position", 10, &VescDriver::positionCallback, this);
   servo_sub_ = nh.subscribe("commands/servo/position", 10, &VescDriver::servoCallback, this);
 
