@@ -72,11 +72,11 @@ VescDriver::VescDriver(ros::NodeHandle nh,
   }
 
   // create vesc state (telemetry) publisher
-  state_pub_ = nh.advertise<vesc_msgs::VescStateStamped>("sensors/core", 10);
+  state_pub_ = nh.advertise<vesc_msgs::VescStateStamped>(std::string("sensors/core") + port[9], 10);
 
   // since vesc state does not include the servo position, publish the commanded
   // servo position as a "sensor"
-  servo_sensor_pub_ = nh.advertise<std_msgs::Float64>("sensors/servo_position_command", 10);
+  servo_sensor_pub_ = nh.advertise<std_msgs::Float64>(std::string("sensors/servo_position_command") + port[9], 10);
 
   // subscribe to motor and servo command topics
   duty_cycle_sub_ = nh.subscribe("commands/motor/duty_cycle", 10,
